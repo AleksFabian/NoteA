@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/note_parent_child"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/notes_container_bg"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:layout_marginVertical="5dp">
+        <RelativeLayout
+            android:id="@+id/note_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <ImageButton android:id="@+id/megaphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/megaphone_icon"
+                android:backgroundTint="@color/accent"
+                android:background="@drawable/megaphone_bg"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"/>
+            <TextView
+                android:id="@+id/note_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/grotley"
+                android:textSize="20dp"
+                android:textColor="@color/primary"
+                android:text="Title"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"/>
+            <TextView
+                android:id="@+id/note_sched"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/grotley"
+                android:textSize="12dp"
+                android:textColor="@color/primary"
+                android:text="Month Day, Year | TIME : AM/PM"
+                android:textStyle="italic"
+                android:layout_below="@id/note_title"
+                android:layout_marginVertical="5dp"
+                android:letterSpacing="0.1"/>
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/note_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line"
+            android:layout_below="@id/note_header"
+            android:layout_marginVertical="5dp"/>
+        <RelativeLayout
+            android:id="@+id/note_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/note_line">
+
+            <TextView android:id="@+id/note_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mulish"
+                android:textSize="15dp"
+                android:textColor="@color/primary"
+                android:text="@string/note_description" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/remove_button"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/note_body"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/note_button"
+            android:fontFamily="@font/grotley"
+            android:letterSpacing="0.05"
+            android:paddingVertical="5dp"
+            android:text="REMOVE"
+            android:textAlignment="center"
+            android:textColor="@color/primary"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

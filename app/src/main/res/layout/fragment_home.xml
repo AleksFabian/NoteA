@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/headbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary"
+        android:padding="15dp">
+        <ImageView
+            android:layout_width="148dp"
+            android:layout_height="42dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/logohorizontalnobackground"/>
+        <TextView
+            android:id="@+id/welcome_back_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="200dp"
+            android:fontFamily="@font/grotley"
+            android:text="Welcome back, Jacob!"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:textSize="24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/home_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headbar">
+        <RelativeLayout android:id="@+id/language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <TextView android:id="@+id/pick_lang_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pick voice language/accent: "
+                android:fontFamily="@font/alatsi"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"/>
+            <Spinner android:id="@+id/lang_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/pick_lang_str"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="80dp"
+            android:layout_below="@id/language">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/note_parent_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </ScrollView>
+            <RelativeLayout android:id="@+id/no_notes"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:background="@drawable/add_note_container"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                android:layout_margin="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="No Notes Yet"
+                    android:textSize="40dp"
+                    android:fontFamily="@font/mulish"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="80dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/plus_icon"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/write_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/write_icon"
+            android:layout_toLeftOf="@id/add_float"
+            android:layout_alignBottom="@id/add_float"
+            android:backgroundTint="@color/primary"
+            android:visibility="invisible"
+            app:borderWidth="0dp"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/voice_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/mic_icon"
+            android:layout_above="@id/add_float"
+            android:layout_alignLeft="@id/add_float"
+            android:backgroundTint="@color/primary"
+            android:visibility="invisible"
+            app:borderWidth="0dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/add_note_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="40dp"
+        android:visibility="gone"
+        android:background="#75000000">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/add_note_container"
+            android:layout_centerInParent="true"
+            android:padding="10dp">
+            <ImageView android:id="@+id/back"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/back_icon"
+                android:layout_alignParentEnd="true"
+                android:clickable="true"/>
+            <RelativeLayout android:id="@+id/note_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/back"
+                android:paddingHorizontal="10dp">
+                <TextView
+                    android:id="@+id/add_note_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/grotley"
+                    android:textSize="20dp"
+                    android:textColor="@color/primary"
+                    android:text="Title: "
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:layout_marginVertical="5dp"/>
+                <EditText
+                    android:id="@+id/et_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/add_note_title"
+                    android:layout_alignBaseline="@id/add_note_title"
+                    android:hint="Add title"
+                    android:textColorHint="#75000000"
+                    android:fontFamily="@font/mulish"
+                    android:inputType="text"/>
+                <TextView
+                    android:id="@+id/add_note_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/grotley"
+                    android:textSize="20dp"
+                    android:textColor="@color/primary"
+                    android:text="Date: "
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:layout_below="@id/add_note_title"
+                    android:layout_marginVertical="5dp"/>
+                <EditText
+                    android:id="@+id/et_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/add_note_date"
+                    android:layout_alignBaseline="@id/add_note_date"
+                    android:hint="Enter date"
+                    android:textColorHint="#75000000"
+                    android:fontFamily="@font/mulish"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+                <TextView
+                    android:id="@+id/add_note_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/grotley"
+                    android:textSize="20dp"
+                    android:textColor="@color/primary"
+                    android:text="Time: "
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:layout_below="@id/add_note_date"
+                    android:layout_marginVertical="5dp"/>
+                <EditText
+                    android:id="@+id/et_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/add_note_time"
+                    android:layout_alignBaseline="@id/add_note_time"
+                    android:hint="Enter time"
+                    android:textColorHint="#75000000"
+                    android:fontFamily="@font/mulish"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+                <RelativeLayout android:id="@+id/description_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_note_time"
+                    android:layout_centerHorizontal="true">
+                    <TextView
+                        android:id="@+id/add_note_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/grotley"
+                        android:textSize="20dp"
+                        android:textColor="@color/primary"
+                        android:text="DESCRIPTION"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_centerVertical="true"/>
+                    <ImageView android:id="@+id/speak_desc"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/mic_icon"
+                        android:background="@drawable/megaphone_bg"
+                        android:padding="10dp"
+                        android:layout_toEndOf="@id/add_note_desc"
+                        android:layout_centerVertical="true"
+                        android:layout_marginHorizontal="10dp"
+                        android:clickable="true"
+                        android:hapticFeedbackEnabled="true"/>
+                </RelativeLayout>
+                <EditText
+                    android:id="@+id/et_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/description_header"
+                    android:background="@drawable/add_desc"
+                    android:hint="Don't forget to wash..."
+                    android:padding="20dp"
+                    android:textSize="15dp"
+                    android:textColorHint="#75000000"
+                    android:textColor="@color/primary"
+                    android:fontFamily="@font/mulish"
+                    android:inputType="textMultiLine"/>
+            </RelativeLayout>
+
+            <TextView android:id="@+id/addNoteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add note"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/note_form"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/alatsi"
+                android:background="@drawable/formbutton"
+                android:paddingHorizontal="40dp"
+                android:paddingVertical="5dp"
+                android:clickable="true"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

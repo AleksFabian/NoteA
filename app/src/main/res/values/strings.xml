@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">NoteA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="note_description">
+        1 Spray of Isopropyl\n1 Cup of Biogesic\n1 Cup of Warm Water
+    </string>
+    <string-array name="language_array">
+        <item>English</item>
+        <item>Japanese</item>
+        <item>Chinese</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Italian</item>
+        <item>Korean</item>
+        <item>Taiwanese</item>
+        <item>Spanish</item>
+    </string-array>
+</resources>
