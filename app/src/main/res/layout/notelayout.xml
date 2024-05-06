@@ -23,7 +23,10 @@
                 android:background="@drawable/megaphone_bg"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                />
             <TextView
                 android:id="@+id/note_title"
                 android:layout_width="wrap_content"

@@ -7,53 +7,66 @@
     tools:context=".AccountFragment"
     android:background="@color/background"
     android:padding="10dp">
-    <ImageView android:id="@+id/acc_pic"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:src="@drawable/account_icon"
-        app:tint="@color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
-
-    <TextView android:id="@+id/acc_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name of Account"
-        android:layout_below="@id/acc_pic"
-        android:layout_centerHorizontal="true"
-        android:textSize="34dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/alatsi"/>
-
-    <TextView android:id="@+id/acc_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="acc@email.com"
-        android:layout_below="@id/acc_name"
-        android:layout_centerHorizontal="true"
-        android:textSize="34dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/alatsi"
-        android:layout_marginVertical="20dp"/>
-
-    <TextView
-        android:layout_marginTop="80dp"
-        android:id="@+id/logoutButton"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/transparent_button"
-        android:text="LOGOUT"
-        android:layout_centerHorizontal="true"
-        android:letterSpacing="0.2"
-        android:clickable="true"
-        android:onClick="logout"
-        android:textAlignment="center"
-        android:paddingVertical="40px"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/alatsi"
-        android:textColor="@color/white"
-        android:layout_below="@id/acc_email" />
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView android:id="@+id/acc_pic"
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
+                    android:src="@drawable/account_icon"
+                    app:tint="@color/white"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"/>
+
+                <TextView android:id="@+id/acc_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name of Account"
+                    android:layout_below="@id/acc_pic"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="34dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/alatsi"/>
+
+                <TextView android:id="@+id/acc_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="acc@email.com"
+                    android:layout_below="@id/acc_name"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="34dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/alatsi"
+                    android:layout_marginVertical="20dp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_marginTop="80dp"
+                android:id="@+id/logoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transparent_button"
+                android:text="LOGOUT"
+                android:layout_centerHorizontal="true"
+                android:letterSpacing="0.2"
+                android:clickable="true"
+                android:onClick="logout"
+                android:textAlignment="center"
+                android:paddingVertical="40px"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/alatsi"
+                android:textColor="@color/white"
+                android:layout_below="@id/acc_email" />
+        </LinearLayout>
+    </ScrollView>
 
 
 

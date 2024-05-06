@@ -252,7 +252,11 @@ public class HomeFragment extends Fragment {
                 speakIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
                 speakIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Start speaking");
 
-                startActivityForResult(speakIntent, REQUEST_CODE_SPEECH_INPUT);
+                try {
+                    startActivityForResult(speakIntent, REQUEST_CODE_SPEECH_INPUT);
+                } catch (Exception e){
+                    Toast.makeText(getContext(), "Device not compatible with Google speech recognition", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -380,9 +384,13 @@ public class HomeFragment extends Fragment {
                         sched = sched + " every " + timeStr;
                     String desc = "Description: " + descStr;
 
-                    tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-                    tts.speak(sched, TextToSpeech.QUEUE_ADD, null);
-                    tts.speak(desc, TextToSpeech.QUEUE_ADD, null);
+                    try {
+                        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+                        tts.speak(sched, TextToSpeech.QUEUE_ADD, null);
+                        tts.speak(desc, TextToSpeech.QUEUE_ADD, null);
+                    } catch (Exception e){
+                        Toast.makeText(getContext(), "Device not applicable with Text to Speech", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
 

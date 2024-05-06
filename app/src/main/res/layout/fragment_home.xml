@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@color/secondary"
         android:padding="15dp">
-        <ImageView
+        <ImageView android:id="@+id/notea_headbar_logo"
             android:layout_width="148dp"
             android:layout_height="42dp"
             android:layout_centerVertical="true"
@@ -23,7 +23,7 @@
             android:id="@+id/welcome_back_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxWidth="200dp"
+            android:layout_toStartOf="@id/notea_headbar_logo"
             android:fontFamily="@font/grotley"
             android:text="Welcome back, Jacob!"
             android:textStyle="bold"
